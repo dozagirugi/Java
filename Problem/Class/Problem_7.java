@@ -3,12 +3,12 @@ package Java_Problem.Class;
 public class Problem_7 {
     public static void main(String[] args) {
 
-        Account a = new Account("김도연의 계좌", 1000);
+        Account a = new Account("김도연의 계좌", 10000);
         Account b = new Account("홍길동의 계좌", 15000);
 
-        boolean aaa = true;
-        while (aaa) {
-             aaa = a.transfer(b, 3000);
+        boolean result = true;
+        while (result) {
+             result = a.transfer(b, 10000);
         }
 
         System.out.println(a.toString());
@@ -30,12 +30,12 @@ class Account {
     }
 
     public boolean transfer(Account target, int amount) {
-        if(amount < 3000) {
+        if(money < amount) {
             return false;
         }
 
-        money -= 3000;
-        target.money += 3000;
+        money -= amount;
+        target.money += amount;
 
         return true;
     }
